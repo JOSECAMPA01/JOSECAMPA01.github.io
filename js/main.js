@@ -1,53 +1,76 @@
-// Carrusel original
-const trackOriginal = document.querySelector('.carousel-track');
-const slidesOriginal = Array.from(document.querySelectorAll('.slide'));
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
-let indexOriginal = 0;
+/***************************************************
+ INICIALIZAR *PRIMER CARRUSEL* (el que no funcionaba)
+***************************************************/
+const track = document.querySelector('.carousel-track');
 
-function showSlideOriginal(i) {
-  if (i < 0) indexOriginal = slidesOriginal.length - 1;
-  else if (i >= slidesOriginal.length) indexOriginal = 0;
-  else indexOriginal = i;
+if (track) {
+  const slides = Array.from(track.children);
+  const btnLeft = document.querySelector('.arrow.left');
+  const btnRight = document.querySelector('.arrow.right');
+  let index = 0;
 
-  const slideWidth = slidesOriginal[0].getBoundingClientRect().width;
-  trackOriginal.style.transform = `translateX(-${indexOriginal * slideWidth}px)`;
+  function actualizarCarrusel() {
+    const slideWidth = slides[0].offsetWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  btnLeft.addEventListener("click", () => {
+    index = (index > 0) ? index - 1 : slides.length - 1;
+    actualizarCarrusel();
+  });
+
+  btnRight.addEventListener("click", () => {
+    index = (index < slides.length - 1) ? index + 1 : 0;
+    actualizarCarrusel();
+  });
+
+  window.addEventListener("resize", actualizarCarrusel);
+  actualizarCarrusel();
 }
 
-leftArrow.addEventListener('click', () => showSlideOriginal(indexOriginal - 1));
-rightArrow.addEventListener('click', () => showSlideOriginal(indexOriginal + 1));
-window.addEventListener('resize', () => showSlideOriginal(indexOriginal));
-showSlideOriginal(indexOriginal);
 
 
 
+/***************************************************
+  SEGUNDO CARRUSEL
+***************************************************/
+const trackDos = document.querySelector('.trackDos');
 
+if (trackDos) {
+  const slidesDos = Array.from(trackDos.children);
+  const btnLeftDos = document.querySelector('.btnLeftDos');
+  const btnRightDos = document.querySelector('.btnRightDos');
+  const windowDos = document.querySelector('.carousel.dos .carousel-window');
 
-const trackNuevo = document.querySelector('.trackNuevo');
-const slidesNuevo = Array.from(trackNuevo.children);
-const btnLeft = document.querySelector('.btnLeft');
-const btnRight = document.querySelector('.btnRight');
-let indexNuevo = 0;
+  let indexDos = 0;
 
-function actualizarCarrusel() {
-  const slideWidth = slidesNuevo[0].offsetWidth; // ancho del slide (120vw)
-  trackNuevo.style.transform = `translateX(-${indexNuevo * slideWidth}px)`;
+  function actualizarCarruselDos() {
+    const slideWidth = windowDos.clientWidth;
+    slidesDos.forEach(s => s.style.width = slideWidth + "px");
+    trackDos.style.transform = `translateX(-${indexDos * slideWidth}px)`;
+  }
+
+  // ⬅️ Mover a la izquierda con loop
+  btnLeftDos.addEventListener("click", () => {
+    indexDos = (indexDos > 0) ? indexDos - 1 : slidesDos.length - 1;
+    actualizarCarruselDos();
+  });
+
+  // ➡️ Mover a la derecha con loop
+  btnRightDos.addEventListener("click", () => {
+    indexDos = (indexDos < slidesDos.length - 1) ? indexDos + 1 : 0;
+    actualizarCarruselDos();
+  });
+
+  window.addEventListener("resize", actualizarCarruselDos);
+  actualizarCarruselDos();
 }
 
-btnLeft.addEventListener('click', () => {
-  indexNuevo = (indexNuevo > 0) ? indexNuevo - 1 : slidesNuevo.length - 1;
-  actualizarCarrusel();
-});
-
-btnRight.addEventListener('click', () => {
-  indexNuevo = (indexNuevo < slidesNuevo.length - 1) ? indexNuevo + 1 : 0;
-  actualizarCarrusel();
-});
-
-window.addEventListener('resize', actualizarCarrusel);
-actualizarCarrusel();
 
 
+/***************************************************
+ FAQ ACORDEÓN
+***************************************************/
 const faqs = document.querySelectorAll('.faq');
 
 faqs.forEach(faq => {
@@ -57,7 +80,6 @@ faqs.forEach(faq => {
 
   btn.addEventListener('click', () => {
 
-    // Cerrar los demás
     faqs.forEach(other => {
       if (other !== faq) {
         other.querySelector('.faq-answer').classList.remove('show');
@@ -65,7 +87,6 @@ faqs.forEach(faq => {
       }
     });
 
-    // Alternar el actual
     answer.classList.toggle('show');
     icon.textContent = answer.classList.contains('show') ? "−" : "+";
   });
