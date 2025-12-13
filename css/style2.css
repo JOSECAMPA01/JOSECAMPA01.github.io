@@ -1,0 +1,580 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+}
+
+.industries {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.top-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.text-block {
+    flex: 1;
+    min-width: 320px;
+}
+
+.text-block h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.text-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 480px;
+}
+
+.text-block p a {
+    color: royalblue;
+    text-decoration: none;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.primary {
+    background: #000;
+    color: #fff;
+}
+
+.secondary {
+    background: #333;
+    color: #fff;
+}
+
+.image-block {
+    flex: 1;
+    min-width: 320px;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+}
+
+/* ==============================
+   segunda seccion
+=================================*/
+
+body {
+    background: #f1f1f1; /* FONDO GRIS */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.inventory-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* ===== CONTENEDOR DE 4 TARJETAS ===== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 25px;
+}
+
+/* ===== TARJETAS ===== */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Todas iguales */
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    margin-top: 10px;
+}
+
+/* ===== BOTÓN ===== */
+
+.btn-center {
+    margin-top: 80px;
+}
+
+
+.btn-main {
+    background: #000;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 1100px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==============================
+   sfaq negra
+=================================*/
+
+/* ==============================
+   SECCIÓN NEGRA CON FAQ
+=================================*/
+
+.section-container {
+    background: #0d0d0d;
+    color: white;
+    padding: 80px 40px;
+}
+
+/* TITULO CENTRADO */
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+/* CONTENEDOR 2 COLUMNAS */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap; /* permite que se acomode en móvil */
+}
+
+.left {
+    width: 45%;
+    min-width: 300px; /* evita que se rompa */
+}
+
+.right img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* FAQ */
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.faq-question span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #c0c0c0;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #cfcfcf;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.cta {
+    margin-top: 40px;
+    padding: 12px 28px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==============================
+   RESPONSIVE FAQ NEGRA
+=================================*/
+
+@media (max-width: 1000px) {
+    .content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 850px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-title {
+        font-size: 24px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+}
+
+/* ==============================
+   SECCIÓN BRAND
+=================================*/
+
+.brand-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.brand-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.brand-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap; /* RESPONSIVE */
+}
+
+.brand-left {
+    width: 50%;
+    min-width: 300px;
+}
+
+.text-block h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.text-block p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.brand-left a {
+    color: #0853ff;
+    text-decoration: underline;
+}
+
+.cta {
+    margin-top: 10px;
+    padding: 12px 28px;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.brand-right img {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+/* ==============================
+   RESPONSIVE BRAND
+=================================*/
+
+@media (max-width: 900px) {
+    .brand-content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 780px) {
+    .brand-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand-left,
+    .brand-right {
+        width: 100%;
+    }
+
+    .brand-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    .brand-title {
+        font-size: 24px;
+    }
+
+    .text-block h3 {
+        font-size: 18px;
+    }
+}
+
+
+/* ==============================
+   faq 
+=================================*/
+
+.faq2-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.faq2-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.faq2-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq2-item {
+    background: #eeeeee;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq2-question {
+    width: 100%;
+    background: #eeeeee;
+    border: none;
+    padding: 20px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq2-icon {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.faq2-answer {
+    display: none;
+    background: white;
+    padding: 20px 25px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* ==============================
+   video
+=================================*/
+
+.tutorial-hero {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.tutorial-hero h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+.tutorial-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ==============================
+   faq 
+=================================*/
+.related-blogs {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.related-blogs h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.blogs-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    width: 340px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 18px 20px;
+}
+
+.meta {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.blog-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.excerpt {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
