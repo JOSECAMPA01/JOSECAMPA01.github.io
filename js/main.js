@@ -1,3 +1,48 @@
+ // MENU MOBILE
+  document.getElementById('menuToggle').onclick = () => {
+    document.querySelector('.nav').classList.toggle('active');
+  };
+
+  // BOTÓN DE IDIOMA (placeholder)
+  document.getElementById('langToggle').onclick = () => {
+    alert('Aquí conectas el cambio de idioma 🇺🇸');
+  };
+
+  
+const industriesBtn = document.getElementById('industriesBtn');
+const industriesDropdown = document.getElementById('industriesDropdown');
+
+// Desktop hover
+industriesBtn.addEventListener('mouseenter', () => {
+  industriesDropdown.classList.add('active');
+});
+
+industriesDropdown.addEventListener('mouseleave', () => {
+  industriesDropdown.classList.remove('active');
+});
+
+// Mobile click
+industriesBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  industriesDropdown.classList.toggle('active');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /***************************************************
  INICIALIZAR *PRIMER CARRUSEL* (el que no funcionaba)
 ***************************************************/
